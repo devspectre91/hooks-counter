@@ -16,7 +16,9 @@ function App() {
         return pre - step;
       });
     } else if (e.target.dataset.id === "reset") {
-      setCounter(0);setStep(1); setMax(Infinity);
+      setCounter(0);
+      setStep(1);
+      setMax(Infinity);
     } else if (e.target.dataset.id === "step5") {
       setStep(5);
     } else if (e.target.dataset.id === "step10") {
@@ -25,10 +27,13 @@ function App() {
       setStep(15);
     } else if (e.target.dataset.id === "15") {
       setMax(15);
+      counter > 15 && setCounter(15);
     } else if (e.target.dataset.id === "100") {
       setMax(100);
+      counter > 100 && setCounter(100);
     } else if (e.target.dataset.id === "200") {
       setMax(200);
+      counter > 200 && setCounter(200);
     }
   }
   return (
@@ -55,7 +60,9 @@ function App() {
             <div className="has-text-centered">
               <div
                 className={
-                  step===5 ? "button mx-4 step is-warning" : "button mx-4 step"
+                  step === 5
+                    ? "button mx-4 step is-warning"
+                    : "button mx-4 step"
                 }
                 data-id="step5"
                 onClick={handleClick}
@@ -64,7 +71,9 @@ function App() {
               </div>
               <div
                 className={
-                  step===10 ?"button mx-4 step is-warning" : "button mx-4 step"
+                  step === 10
+                    ? "button mx-4 step is-warning"
+                    : "button mx-4 step"
                 }
                 data-id="step10"
                 onClick={handleClick}
@@ -73,7 +82,9 @@ function App() {
               </div>
               <div
                 className={
-                  step===15? "button mx-4 step is-warning" : "button mx-4 step"
+                  step === 15
+                    ? "button mx-4 step is-warning"
+                    : "button mx-4 step"
                 }
                 data-id="step15"
                 onClick={handleClick}
@@ -89,7 +100,7 @@ function App() {
             <div className="has-text-centered">
               <div
                 className={
-                  max===15 ? "button mx-4 max is-warning" : "button mx-4 max"
+                  max === 15 ? "button mx-4 max is-warning" : "button mx-4 max"
                 }
                 data-id="15"
                 onClick={handleClick}
@@ -98,7 +109,7 @@ function App() {
               </div>
               <div
                 className={
-                  max===100 ? "button mx-4 max is-warning" : "button mx-4 max"
+                  max === 100 ? "button mx-4 max is-warning" : "button mx-4 max"
                 }
                 data-id="100"
                 onClick={handleClick}
@@ -107,7 +118,7 @@ function App() {
               </div>
               <div
                 className={
-                  max===200? "button mx-4 max is-warning" : "button mx-4 max"
+                  max === 200 ? "button mx-4 max is-warning" : "button mx-4 max"
                 }
                 data-id="200"
                 onClick={handleClick}
