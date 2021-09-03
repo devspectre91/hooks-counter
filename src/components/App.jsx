@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   let [counter, setCounter] = useState(0);
@@ -9,6 +9,10 @@ function App() {
     if (e.target.dataset.id === "increment") {
       setCounter((pre) => {
         counter = pre + step;
+        // if(counter>max){
+        //   alert('Maximum value reached!')
+        // }
+        counter > max && alert("Maximum value reached!");
         return counter > max ? counter - step : counter;
       });
     } else if (e.target.dataset.id === "decrement") {
@@ -18,6 +22,7 @@ function App() {
     } else if (e.target.dataset.id === "reset") {
       setCounter(0);
       setStep(1);
+
       setMax(Infinity);
     } else if (e.target.dataset.id === "step5") {
       setStep(5);
@@ -52,6 +57,7 @@ function App() {
             </div>
           </div>
         </div>
+
         <div className="columns is-centered p-4">
           <div className="column is-5 is-multiline is-centered">
             <div className="has-text-centered has-text-weight-bold my-4">
